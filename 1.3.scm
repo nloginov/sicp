@@ -1,8 +1,4 @@
-(define (assert-equal expected actual)
-  (if (= expected actual)
-    (display "Test pass\n")
-    (display "Test failed\n")
-  ))
+(load "assert.scm")
 
 (define (square x)
   (* x x))

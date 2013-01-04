@@ -1,9 +1,5 @@
-(define (assert-equal expected actual)
-  (if (= expected actual)
-    (display "Test pass\n")
-    (display "Test failed\n")
-  ))
-  
+(load "assert.scm")
+
 (define (a-plus-abs-b a b)
 	((if (> b 0) + -) a b))
 	

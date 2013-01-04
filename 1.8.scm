@@ -1,8 +1,4 @@
-(define (assert-close expected actual)
-  (if (< (abs (- expected actual)) 0.0001)
-    (display "Test pass\n")
-    (display "Test failed\n")
-  ))
+(load "assert.scm")
 
 (define (cube-root-iter prev_guess cur_guess x)
     (if (good-enough? prev_guess cur_guess)

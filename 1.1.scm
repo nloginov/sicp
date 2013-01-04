@@ -1,14 +1,4 @@
-(define (assert-equal expected actual)
-  (if (= expected actual)
-    (display "Test pass\n")
-    (display "Test failed\n")
-  ))
-
-(define (assert-false predicate)
-	(if (not predicate)
-		(display "Test pass\n")
-		(display "Test failed\n")
-	))
+(load "assert.scm")
 
 (assert-equal 10 10)
 (assert-equal 8 (- 9 1))
