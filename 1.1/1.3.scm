@@ -1,4 +1,4 @@
-(load "assert.scm")
+(load "../assert.scm")
 
 (define (square x)
   (* x x))

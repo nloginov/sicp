@@ -1,4 +1,4 @@
-(load "assert.scm")
+(load "../assert.scm")
 
 (define (fib n)
   (fib-iter 1 0 0 1 n))

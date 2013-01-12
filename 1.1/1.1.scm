@@ -1,4 +1,4 @@
-(load "assert.scm")
+(load "../assert.scm")
 
 (assert-equal 10 10)
 (assert-equal 8 (- 9 1))

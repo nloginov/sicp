@@ -1,0 +1,40 @@
+(load "../assert.scm")
+(load "common.scm")
+
+(define (expmod base exp m)
+  (cond ((= exp 0) 1)
+        ((even? exp)
+         (remainder (square (expmod base (/ exp 2) m)) m))
+        (else 
+          (remainder (* base (expmod base (- exp 1) m)) m))))
+
+(define (fermat-test n a)
+  (= (expmod a n n) a))
+
+(define (fast-prime? n times)
+  (cond ((= times 0) #t)
+        ((fermat-test n times) (fast-prime? n (- times 1)))
+        (else #f)))
+
+(define (ferma-prime? n)
+  (fast-prime? n (- n 1)))
+
+(assert-true (ferma-prime? 3))
+(assert-true (ferma-prime? 5))
+(assert-true (ferma-prime? 7))
+(assert-true (ferma-prime? 149))
+(assert-true (ferma-prime? 151))
+(assert-true (ferma-prime? 157))
+
+(assert-true (ferma-prime? 561))
+(assert-false (prime? 561))
+(assert-true (ferma-prime? 1105))
+(assert-false (prime? 1105))
+(assert-true (ferma-prime? 1729))
+(assert-false (prime? 1729))
+(assert-true (ferma-prime? 2465))
+(assert-false (prime? 2465))
+(assert-true (ferma-prime? 2821))
+(assert-false (prime? 2821))
+(assert-true (ferma-prime? 6601))
+(assert-false (prime? 6601))

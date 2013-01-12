@@ -1,4 +1,4 @@
-(load "assert.scm")
+(load "../assert.scm")
 
 (define (fast-expt b n)
   (fast-expt-iter n 1 b))

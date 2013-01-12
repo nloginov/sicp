@@ -1,4 +1,4 @@
-(load "assert.scm")
+(load "../assert.scm")
 
 (define (cube-root-iter prev_guess cur_guess x)
     (if (good-enough? prev_guess cur_guess)
