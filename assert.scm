@@ -3,6 +3,12 @@
     (display "Test passed.\n")
     (display-failed expected actual)))
 
+(define (assert-equal-cons expected actual)
+  (if (and (= (car expected) (car actual))
+           (= (cdr expected) (cdr actual)))
+    (display "Test passed.\n")
+    (display-failed expected actual)))
+
 (define (display-failed expected actual)
   (display "Test failed. Expected: ")
   (display expected)
